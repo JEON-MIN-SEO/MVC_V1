@@ -98,4 +98,14 @@ public class RequestParamController {
 
         return "ok";
     }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    public String modelAttributeV2(HelloData helloData) {
+        //@RequestParam은 기본형으로 인식
+        //@ModelAttribute은 직접 만든 클래스로 인식
+        log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
+
+        return "ok";
+    }
 }
